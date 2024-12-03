@@ -1,5 +1,5 @@
 # Butterfly
-This is aemplate repository for using the 'blue-yonder' package. If you want to use it just click the 'Use this template' button on the top of this page.
+This is a **template repository** for using the 'blue-yonder' package. If you want to use it just click the 'Use this template' button on the top of this page.
 ![image description](./pictures/use_template.png)
 <br>The `blue-yonder` package is a pypi Python package that allows you to post text and images to BlueSky.
 
