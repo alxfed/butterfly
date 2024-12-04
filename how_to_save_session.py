@@ -9,14 +9,17 @@ import yaml
 from blue_yonder import Client
 
 # Make sure to have the environment variables set
-# or uncomment the following lines
+# or uncomment the following lines to load them from a .env file
 # import dotenv
 # dotenv.load_dotenv()
 
+
+# Path to the file where JASON Web Token will be stored.
 JWT_PATH = './configuration/jwt.yaml'  # Path to the JWT file
 
 
 def main():
+    # Instantiate the client
     butterfly = Client()
 
     # The session parameters are in a JASON Web Token,

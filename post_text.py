@@ -41,6 +41,8 @@ def main():
 
     result = butterfly.post(plain_text)
 
+    return result
+
 
 if __name__ == "__main__":
     main()

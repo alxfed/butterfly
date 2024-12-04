@@ -52,8 +52,8 @@ if __name__ == "__main__":
         bluesky_password=getenv('BLUESKY_PASSWORD'),
         jwt=jwt
     )
-    # new_jwt = butterfly.publish_jwt()
-    # save_jwt(new_jwt)
+    new_jwt = butterfly.publish_jwt()
+    save_jwt(new_jwt)
 
     posts = chunk_text(long_text)
     result = butterfly.thread(posts_texts=posts)
