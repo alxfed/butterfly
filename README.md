@@ -31,3 +31,4 @@ The BlueSky service uses sessions and tokens associated with your account that l
 In browser all the necessary credentials are (automatically) stored in cookies of your browser, but if you are building your own automation you need to take care of all that youself, otherwise the 'log-in' service of BlueSky would be overwhelmed by repeated log-in attempts and we don't want that to happen. That is why the very first example is:
 #### [1. How to save a session](./how_to_save_session.py)
 This mechanism, together with the ability of blue-yonder Client to check the validity of the passed 'jwt' when it is instantiated will help the service to avoid overloads.
+#### [2. How to post text](./post_text.py)
