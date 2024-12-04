@@ -33,4 +33,13 @@ if __name__ == "__main__":
     with open(POSTS_LIST_PATH, 'r') as posts_file:
         posts_list = yaml.load(posts_file, Loader=yaml.FullLoader)
 
+    # Delete all posts if you are just experimenting.
+    for post in posts_list['records']:
+        butterfly.delete_post(post['uri'])
+
+    final_result = butterfly.get_posts_list()
+
+    # Record it in the file.
+    with open(POSTS_LIST_PATH, 'w') as posts_list_file:
+        yaml.dump(final_result, posts_list_file)
     ...

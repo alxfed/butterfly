@@ -24,16 +24,13 @@ def main():
     # if you don't want to set the environment variables
     # just store the credentials in the configuration file.
     # See the config_example.yaml
+
+    config = go_configure()
+
     butterfly = Butterfly(
-        bluesky_handle=getenv(
-            'BLUESKY_HANDLE',
-            go_configure()[0]['bluesky_handle']
-        ),
-        bluesky_password=getenv(
-            'BLUESKY_PASSWORD',
-            go_configure()[0]['bluesky_password']
-        ),
-        jwt=go_configure()[1]
+        bluesky_handle=getenv('BLUESKY_HANDLE', config[0]['BLUESKY_HANDLE']),
+        bluesky_password=getenv('BLUESKY_PASSWORD', config[0]['BLUESKY_PASSWORD']),
+        jwt=config[1]
     )
 
     updated_jwt = butterfly.publish_jwt()
