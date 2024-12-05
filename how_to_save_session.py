@@ -35,7 +35,7 @@ def relogin():
     with open(JWT_PATH, 'r') as jwt_file:
         jwt = yaml.load(jwt_file, Loader=yaml.BaseLoader)
 
-    # Instantiate the client with the old session (jwt).
+    # Instantiate a client with the old session (jwt).
     butterfly = Client(jwt=jwt)
     return butterfly
 

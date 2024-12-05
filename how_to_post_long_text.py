@@ -6,8 +6,8 @@ This source code is licensed under the license found in the
 LICENSE file in the root directory of this source tree.
 """
 from os import getenv
-from configuration import go_configure, save_jwt
-from blue_yonder import Butterfly
+from configuration import go_configure, load_jwt, save_jwt
+from blue_yonder import Client
 
 # Long text that will be posted as a thread
 # (a sequence of consecutive posts).
@@ -18,7 +18,7 @@ long_text = """Idea - As the topical analysis or outline in each chapter indicat
 
 def chunk_text(text, max_length=290):
     """
-    Split a long text into chunks of maximum length without splitting words.
+    Split a long text into a list ofchunks of maximum length without splitting words. Add ' . . .' at the end of each chunk.
 
     Args:
         text (str): The input text.
@@ -45,15 +45,12 @@ def chunk_text(text, max_length=290):
 
 if __name__ == "__main__":
 
-    _, jwt = go_configure()
-
-    butterfly = Butterfly(
+    butterfly = Client(
         bluesky_handle=getenv('BLUESKY_HANDLE'),
         bluesky_password=getenv('BLUESKY_PASSWORD'),
-        jwt=jwt
+        jwt=load_jwt()
     )
-    new_jwt = butterfly.publish_jwt()
-    save_jwt(new_jwt)
+    save_jwt(butterfly.publish_jwt())
 
     posts = chunk_text(long_text)
     result = butterfly.thread(posts_texts=posts)

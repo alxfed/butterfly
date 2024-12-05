@@ -6,7 +6,7 @@ This source code is licensed under the license found in the
 LICENSE file in the root directory of this source tree.
 """
 from os import getenv
-from configuration import go_configure, save_jwt
+from configuration import go_configure, load_jwt, save_jwt
 import yaml
 from blue_yonder import Butterfly
 
@@ -15,15 +15,14 @@ POSTS_LIST_PATH = './data/posts_list.yaml'  # Path to the JWT file
 
 
 if __name__ == "__main__":
-    _, jwt = go_configure()
+    jwt = go_configure()
 
     butterfly = Butterfly(
         bluesky_handle=getenv('BLUESKY_HANDLE'),
         bluesky_password=getenv('BLUESKY_PASSWORD'),
-        jwt=jwt
+        jwt=load_jwt()
     )
-    new_jwt = butterfly.publish_jwt()
-    save_jwt(new_jwt)
+    save_jwt(butterfly.publish_jwt())
 
     result = butterfly.get_posts_list()
 

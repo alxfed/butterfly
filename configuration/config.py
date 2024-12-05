@@ -15,14 +15,17 @@ WHERE_ARE_WE = os.path.dirname(__file__)
 
 def go_configure() :
     config_path = os.path.join(WHERE_ARE_WE, 'config.yaml')
-    jmt_path = os.path.join(WHERE_ARE_WE, 'jwt.yaml')
     with open(config_path, 'r') as yaml_file:
         config_yaml = yaml_file.read()
         config = yaml.load(config_yaml, Loader=yaml.FullLoader)
-    with open(jmt_path, 'r') as jwt_file:
-        jwt_yaml = jwt_file.read()
-        jwt = yaml.load(jwt_yaml, Loader=yaml.FullLoader)
-    return config, jwt
+    return config
+
+
+def load_jwt():
+    jwt_path = os.path.join(WHERE_ARE_WE, 'jwt.yaml')
+    with open(jwt_path, 'r') as jwt_file:
+        jwt = yaml.load(jwt_file, Loader=yaml.FullLoader)
+    return jwt
 
 
 def save_jwt(jwt):
