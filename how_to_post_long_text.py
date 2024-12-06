@@ -18,7 +18,7 @@ long_text = """Idea - As the topical analysis or outline in each chapter indicat
 
 def chunk_text(text, max_length=290):
     """
-    Split a long text into a list ofchunks of maximum length without splitting words. Add ' . . .' at the end of each chunk.
+    Split a long text into a list of chunks of maximum length without splitting words. Add ' . . .' at the end of each chunk.
 
     Args:
         text (str): The input text.

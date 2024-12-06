@@ -25,6 +25,16 @@ This is because Butterflies and Birds are the main 'clients' of the blue sky of 
 
 After using this template repository to create your own repository in your account, clone it to your computer and create a git excluded file .env using a .env_example format and use it to set the environment variables. As an alternative you can use git excluded config.yaml file formatted as it is shown in config_example.yaml file and go_configure function in a py file next to it.
 
+#### Terminology
+
+**Decentralized ID**s (**DID**s) - are the unique identifiers for users and other entities on BlueSky. 
+
+**Content ID**s (**CID**s) identify content using a digitalfingerprint.
+
+**Record Key**s ("**rkey**s") identify individual records in a collection.
+
+**JASON Web Token** ("**JWT**") is used for authentication and authorization.
+
 #### Examples
 The BlueSky service uses sessions and tokens associated with your account that let you make changes in the environment of the BlueSky. While authorized you can post text or images, change the preferences of your account and perform many other actions that suits you best.
 
@@ -32,3 +42,6 @@ In browser all the necessary credentials are (automatically) stored in cookies o
 #### [1. How to save a session](./how_to_save_session.py)
 This mechanism, together with the ability of blue-yonder Client to check the validity of the passed 'jwt' when it is instantiated will help the service to avoid overloads.
 #### [2. How to post text](./post_text.py)
+This is a most basic example of a plain text post.
+#### [3. How to post a reply to a post](./post_reply.py)
+This is an example of a simple plain text reply to a post.

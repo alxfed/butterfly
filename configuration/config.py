@@ -13,7 +13,7 @@ import yaml
 WHERE_ARE_WE = os.path.dirname(__file__)
 
 
-def go_configure() :
+def go_configure(config_file: str = 'config.yaml'):
     config_path = os.path.join(WHERE_ARE_WE, 'config.yaml')
     with open(config_path, 'r') as yaml_file:
         config_yaml = yaml_file.read()
