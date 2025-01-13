@@ -6,7 +6,7 @@ This source code is licensed under the license found in the
 LICENSE file in the root directory of this source tree.
 """
 import yaml
-from blue_yonder import Client
+from blue_yonder import Actor
 
 # Make sure to have the environment variables set
 # or uncomment the following lines to load them from a .env file
@@ -18,17 +18,19 @@ from blue_yonder import Client
 JWT_PATH = './configuration/jwt.yaml'  # Path to the JWT file
 
 
-def main():
+def log_in():
     # Instantiate the client
-    butterfly = Client()
+    my_actor = Actor()
 
     # The session parameters are in a JASON Web Token,
     # or jwt for short.
-    jwt = butterfly.publish_jwt()
+    jwt = my_actor.jwt()
 
     # We will save it in a yaml file.
     with open(JWT_PATH, 'w') as jwt_file:
         yaml.dump(jwt, jwt_file)
+
+    return my_actor
 
 
 def relogin():
@@ -36,11 +38,11 @@ def relogin():
         jwt = yaml.load(jwt_file, Loader=yaml.BaseLoader)
 
     # Instantiate a client with the old session (jwt).
-    butterfly = Client(jwt=jwt)
-    return butterfly
+    previous_actor = Actor(jwt=jwt)
+    return previous_actor
 
 
 if __name__ == '__main__':
-    main()
-    butterfly = relogin()
+    my_actor = log_in()
+    my_restored_actor = relogin()
     ...
