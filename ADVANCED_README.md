@@ -18,3 +18,5 @@ The at-protocol used by Bluesky has its own, sometimes convoluted, terminology. 
 #### Simple and advanced usage.
 You don't need to go into these details if you just want to post a post, maybe with an image or a link to an external page carefully crafted by you. Even if you want to post a long text as a sequence of plain text posts or images of pages you don't go any further. But if you want to do more and 'in your own way', you can use the advanced capabilities of the `blue-yonder` objects.
 
+You might have noticed that frequently used methods of the `blue-yonder` objects can be activated with two types of parameters: the web-addresses of pages and posts and the at-proto URI/DID/CID/rkey parameters. This is because an ordinary automation doesn't require the full scale of capabilities of 'at-protocol' and there is no need to implement all of it. Not all of it is currently used in BlueSky anyway (the best example of this is the app.bsky.feed.sendInteractions method).
+

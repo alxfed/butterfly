@@ -10,7 +10,7 @@ from blue_yonder import Butterfly
 from PIL import Image
 import os
 
-external_link_post_text = 'This is a template repository with examples of `blue_yonder` package usage. Click the "Use this template" button at the top of this page and create a copy of this repo in your account where you will be able to use and modify it the way you want.'
+external_link_post_text = """This is a template repository with examples of `blue_yonder` package usage. Click the "Use this template" button at the top of this page and create a copy of this repo in your account where you will be able to use and modify it the way you want."""
 THUMBNAIL_FILE = './images/butterfly_big.jpg'
 MIME_TYPE = 'image/jpeg'
 image_alt_text = 'This is an image of a butterfly.'

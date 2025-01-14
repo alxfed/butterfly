@@ -28,14 +28,14 @@ The BlueSky service uses sessions and tokens associated with your account that l
 
 In browser all the necessary credentials are (automatically) stored in cookies of your browser, but if you are building your own automation you need to take care of all that youself, otherwise the 'log-in' service of BlueSky would be overwhelmed by repeated log-in attempts, and we don't want that to happen. That is why the very first example is:
 #### [1. How to save a session](./how_to_save_session.py)
-This mechanism will help the service to avoid overloads and save you 'limits'.
+This mechanism will help the Bluesky service to avoid overloads and will also save you 'limits'.
 #### [2. How to post text](./post_text.py)
 This is a most basic example of a plain text post that will be on your profile. If you want to post a reply to somebody's post - see the 5-th example.
 #### [3. How to post a quote](./post_quote.py)
-This is an example of a plain text post quoting another post.
+This is an example of a plain text post quoting any other Bluesky post.
 #### [4. Post text and embed an image](./post_embed_image.py)
 This is an example of a text (which can be an empty string) post with an embedded image.
 #### [5. Post text and a link to external page](./post_embed_external.py)
-This is a most basic example of a plain text post.
+This is an example of a post with a link (actually a 'site card') to a page on any external site.
 #### [6. How to post a reply to a post](./post_reply.py)
 This is what you need to do to reply to a post that you found in the BlueSky web-application.
