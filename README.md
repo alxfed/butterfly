@@ -26,7 +26,7 @@ After using this template repository to create your own repository in your accou
 #### Examples
 The BlueSky service uses handle, password as well as assessions and tokens associated with your account that let you make changes in the environment of the BlueSky. While authorized you can post text or images, change the preferences of your account and perform many other actions.
 
-#### [0. How to log-in and the `.env` file](./how_to_log_in.py)
+#### [0. How to log-in (and the `.env` file)](./how_to_log_in.py)
 The best way to let your Python programs work with the BlueSky API is to use an .env file to store all the necessary credentials, which will be used automatically by the `blue-yonder` package in your log-in. As an alternative you can store them in a config.yaml file (and exclude it from git).
 #### [1. How to save a session](./how_to_save_session.py)
 In browser all the necessary credentials obtained from BlueSky when you log-in are (automatically) stored in cookies of your browser, but if you are building your own automation you need to take care of that youself. This mechanism will help the Bluesky service to avoid overloads and will also save you 'limits' (there is a maximum number of authenticated API calls that you can make per minute and per day).
