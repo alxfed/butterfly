@@ -31,6 +31,27 @@ def log_in():
     # arguments to log in.
     my_actor = Actor()
 
+    # Yet another way to log-in is to use the config.yaml file.
+    # See the config_example.yaml
+    # Then do:
+    from os import getenv
+    from configuration import go_configure, load_jwt
+
+    config = go_configure(config_file='config_example.yaml')
+
+    my_actor = Actor(
+        bluesky_handle=config['BLUESKY_HANDLE'],
+        bluesky_password=config['BLUESKY_PASSWORD']
+    )
+
+    # or a combination of environment variables and config file
+    from os import getenv
+
+    my_actor = Actor(
+        bluesky_handle=getenv('BLUESKY_HANDLE', config['BLUESKY_HANDLE']),
+        bluesky_password=getenv('BLUESKY_PASSWORD', config['BLUESKY_PASSWORD'])
+    )
+
     return my_actor
 
 

@@ -22,6 +22,7 @@ def main():
     """ Post plain text.
     :return:
     """
+
     my_actor = Actor(jwt=load_jwt())
     save_jwt(my_actor.jwt)
 

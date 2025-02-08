@@ -12,7 +12,7 @@ import yaml
 
 plain_text = """    This is an example of a plain text post with a quote. The URL of the post that should be quoted can point at any Bluesky post, be it a plain text, image or post with a link to an extarnal page/site.
 """
-url = 'https://bsky.app/profile/bsky.app/post/3l6oveex3ii2l'
+post = 'https://bsky.app/profile/bsky.app/post/3l6oveex3ii2l'
 
 POST_FILE = './data/post_data.yaml'
 
@@ -25,7 +25,7 @@ def main():
     save_jwt(my_actor.jwt)
 
     # Now, post the text
-    result = my_actor.quote_post(plain_text, quote_url=url)
+    result = my_actor.with_quoted_post(post).post(plain_text)
 
     # We can store the post data in a yaml file
     with open(POST_FILE, 'w') as post_file:
