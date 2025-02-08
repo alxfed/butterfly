@@ -55,9 +55,7 @@ You can add a quote of another Bluesky post to a reply.
 url = 'https://bsky.app/profile/bsky.app/post/3l6oveex3ii2l'
 reply = my_actor.in_reply_to(post).with_quoted_post(url).post(reply_text)
 ```
-#### [4. Post text and embed an image](./post_embed_image.py)
+#### [6. Post text and embed an image](./post_embed_image.py)
 This is an example of a text (which can be an empty string) post with an embedded image.
-#### [5. Post text and a link to external page](./post_embed_external.py)
+#### [7. Post text and a link to external page](./post_embed_external.py)
 This is an example of a post with a link (actually a 'site card') to a page on any external site.
-#### [6. How to post a reply to a post](./post_reply.py)
-This is what you need to do to reply to a post that you found in the BlueSky web-application.
