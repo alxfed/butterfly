@@ -8,13 +8,13 @@ LICENSE file in the root directory of this source tree.
 from blue_yonder import Another
 import yaml
 
-MEMBERS_FILE = 'data/mila_ai_list.yaml'
-SHMEMBERS_FILE = 'data/mila_shlist.yaml'
-person = Another(actor='josephdviviano.bsky.social')
+MEMBERS_FILE = 'data/open_endedness.yaml'
+person = Another(actor='rockt.ai')
+
+stp = 'https://bsky.app/starter-pack/rockt.ai/3lazblsf4z72k'
 
 lists = person.get_lists()
 members = person.read_list(uri=lists[0]['uri'])
-# shmembers = person.read_list(uri=lists[2]['uri'])
 
 with open(MEMBERS_FILE, 'w') as list_file:
     yaml.dump(members, list_file)

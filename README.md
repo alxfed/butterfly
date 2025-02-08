@@ -26,11 +26,24 @@ After using this template repository to create your own repository in your accou
 #### Examples
 The BlueSky service uses sessions and tokens associated with your account that let you make changes in the environment of the BlueSky. While authorized you can post text or images, change the preferences of your account and perform many other actions that suits you best.
 
-In browser all the necessary credentials are (automatically) stored in cookies of your browser, but if you are building your own automation you need to take care of all that youself, otherwise the 'log-in' service of BlueSky would be overwhelmed by repeated log-in attempts, and we don't want that to happen. That is why the very first example is:
+#### [0. .env file and how to log-in](./how_to_log_in.py)
+The best way to let your Python programs work with the BlueSky API is to use an .env file to store all the necessary credentials, which will be used automatically by the `blue-yonder` package in your log-in. As an alternative you can store them in a config.yaml file.
 #### [1. How to save a session](./how_to_save_session.py)
-This mechanism will help the Bluesky service to avoid overloads and will also save you 'limits'.
+In browser all the necessary credentials obtained from BlueSky when you log-in are (automatically) stored in cookies of your browser, but if you are building your own automation you need to take care of that youself. This mechanism will help the Bluesky service to avoid overloads and will also save you 'limits' (there is a maximum number of authenticated API calls that you can make per minute and per day).
 #### [2. How to post text](./post_text.py)
-This is a most basic example of a plain text post that will be on your profile. If you want to post a reply to somebody's post - see the 5-th example.
+This is a most basic example of a plain text post that will be on your profile. 
+```Python
+text = 'This is a post.'
+my_actor = Actor()
+result = my_actor.post(text)
+```
+#### [3. Post a reply](./post_reply.py)
+```Python
+post = 'https://bsky.app/profile/multilogue.bsky.social/post/3lfngdvswe725'
+text = 'This is a reply'
+my_actor = Actor()
+reply = my_actor.in_reply_to(post).post(text)
+```
 #### [3. How to post a quote](./post_quote.py)
 This is an example of a plain text post quoting any other Bluesky post.
 #### [4. Post text and embed an image](./post_embed_image.py)

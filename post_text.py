@@ -15,7 +15,7 @@ A plain text post is a post that contains only text and no images. It is a simpl
     Three hundred characters are pretty much enough if you know what...
 """
 
-POST_FILE = './data/post_data.yaml'
+POST_FILE = './data/post_data.yaml'  # The data about the post you made will be stored here
 
 
 def main():
@@ -34,6 +34,8 @@ def main():
 
     with open(POST_FILE, 'r') as post_file:
         post_data = yaml.load(post_file, Loader=yaml.FullLoader)
+
+    return result
 
 
 if __name__ == "__main__":
@@ -55,4 +57,4 @@ if __name__ == "__main__":
     # save_jwt(butterfly.jwt())
 
     main()
-    ... # A line for setting a breakpoint in IDE.
+    ... # A line for setting a breakpoint in your IDE.
