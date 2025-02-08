@@ -17,7 +17,7 @@ from blue_yonder import Actor, Another, yonder
 Notice that the name of the library that you are using is `blue_yonder`, with an underscore.
 <br>There are more 'playful' aliases for the `blue_yonder` Client too; namely:
 ```Python
-from blue_yonder import Butterfly, Flower
+from blue_yonder import Butterfly, Flower, yonder
 ```
 This is because Butterflies are the main 'clients' of the blue sky of course... and they interact with Flowers.
 
