@@ -117,6 +117,7 @@ end of that text."""
 
 my_actor = Actor()
 
+url= 'https://bsky.app/profile/alxfed.bsky.social/post/3m4c2a2gaxs2r'
 images = create_text_images(plain_text, output_dir=IMAGES_OF_TEXT_PATH)
 my_actor.in_reply_to(url).thread_of_images(paths_and_texts=images)
 ```
