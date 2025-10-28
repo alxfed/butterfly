@@ -79,7 +79,7 @@ There are several major inconveniences of short form text posts, which are:
 - They are limited to 300 characters.
 - The longer texts if formatted as a sequence of messages are hard to read.
 The solutions:
-#### [I How to post a long text split into a thread of posts](./post_long_text.py)
+#### [I  How to post a long text split into a thread of posts](./post_long_text.py)
 This is an example of simple automation that splits a given long text into 'postable' (less than 300 characters) parts and posts all of them as a thread.
 ```Python
 from blue_yonder import Actor
@@ -94,7 +94,20 @@ end"""
 posts = split_text(long_text)
 result = my_actor.thread(posts_texts=posts)
 ```
-#### [II How to post long text as a thread of images of pages](./post_text.py)
+#### [II  How to post long text as a thread of images of pages](./post_thread_of_images_of_pages.py)
+This is a most basic example of a plain text post that will be on your profile. 
+```Python
+from blue_yonder import Actor
+from utilities import create_text_images
+plain_text = """This is a long text ...
+end of that text."""
+
+my_actor = Actor()
+
+images = create_text_images(plain_text, output_dir=IMAGES_OF_TEXT_PATH)
+my_actor.thread_of_images(paths_and_texts=images)
+```
+#### [III  How to post a thread of images of pages in reply to a post](./post_thread_of_images_of_pages_in_reply.py)
 This is a most basic example of a plain text post that will be on your profile. 
 ```Python
 from blue_yonder import Actor
