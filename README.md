@@ -118,5 +118,5 @@ end of that text."""
 my_actor = Actor()
 
 images = create_text_images(plain_text, output_dir=IMAGES_OF_TEXT_PATH)
-my_actor.thread_of_images(paths_and_texts=images)
+my_actor.in_reply_to(url).thread_of_images(paths_and_texts=images)
 ```
